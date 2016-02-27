@@ -1,0 +1,6 @@
+select Person.FirstName,Person.LastName,Address.City,Address.State 
+from Person
+left join Address 
+on Person.PersonId=Address.PersonId
+多表联合查询：
+select * from tb1 left join tb2 on tb1.id=tb2.id
