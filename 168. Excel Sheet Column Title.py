@@ -22,8 +22,24 @@ class Solution(object):
 		string = ''
 		for i in range(0,  lens):
 			key = num26[lens-1-i]
-			string += str(dict[key])
+			print key
+			#string += str(dict[key])
+			string += chr(ord('A') + key-1)
 		return string
 
+	def titleToNumber(self, s):
+		lens = len(s)
+		t, num = 0, 0
+		for i in range(lens):
+			j = lens - 1 -i
+			num += pow(26, t) * (ord(s[j]) - ord('A') + 1)
+			t += 1
+
+		return num
+
 S = Solution()
-print S.convertToTitle(703)
+print S.titleToNumber('B')
+#print S.convertToTitle(27)
+
+#print ord('A')
+#print unichr(ord('A')+1)
