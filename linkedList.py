@@ -15,6 +15,6 @@ class LinkList(object):
 			p.next = node
 			p = p.next
 		return self.head
-data = [1,1,2]
-l = LinkList()
-head = l.initlist(data)
+#data = [1,1,2]
+#l = LinkList()
+#head = l.initlist(data)
