@@ -34,7 +34,6 @@ class Solution(object):
 			j = lens - 1 -i
 			num += pow(26, t) * (ord(s[j]) - ord('A') + 1)
 			t += 1
-
 		return num
 
 S = Solution()
