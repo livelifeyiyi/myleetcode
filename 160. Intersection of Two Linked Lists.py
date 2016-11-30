@@ -1,9 +1,5 @@
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
+import linkedList
+import gc
 #Memory Limit Exceeded
 class Solution1(object):
     def getIntersectionNode(self, headA, headB):
@@ -17,6 +13,7 @@ class Solution1(object):
         while a!= b:
             a = a.next if a else headB
             b = b.next if b else headA
+        gc.collect()
         return a
 
 class Solution2(object):
@@ -31,6 +28,7 @@ class Solution2(object):
         while b:
             b = b.next
             lenb += 1
+        gc.collect()
         a, b = headA, headB
         if lena > lenb:
             for i in range(0, lena-lenb):
@@ -38,7 +36,18 @@ class Solution2(object):
         if lenb >lena:
             for i in range(0, lenb-lena):
                 b = b.next
-        while a != b:
+        #while a.next and b.next and a.val != b.val:
+        if a != b:
             a = a.next
             b = b.next
         return a
+        #if a.val != b.val and not a.next and not b.next:
+        #    return None
+        #else: return a
+L = linkedList.LinkList()
+dataa = [1,3,5,7,9]
+datab = [9]
+headA = L.initlist(dataa)
+headB = L.initlist(datab)
+S = Solution2()
+print S.getIntersectionNode2(headA, headB)
