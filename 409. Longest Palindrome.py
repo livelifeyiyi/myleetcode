@@ -2,6 +2,7 @@ from collections import Counter
 class Solution(object):
 	def longestPalindrome(self, s):
 		"""
+		find the length of the longest palindromes that can be built with those letters
 		:type s: str
 		:rtype: int
 		"""

@@ -21,7 +21,7 @@ class Solution(object):
 			i += 1
 		print resarr
 		return len(resarr)
-	def removeDuplicates(self, nums):
+	def removeDuplicates2(self, nums):
 		if len(nums) <= 2:
 			return len(nums)
 		i, j, k = 0, 1, 2
@@ -32,8 +32,16 @@ class Solution(object):
 				i += 1
 				j += 1
 				k += 1
-		print nums
+		#print nums
 		return len(nums)
+	def removeDuplicates3(self, nums):
+		i = 0
+		for num in nums:
+			if i < 2 or num > nums[i - 2]:
+				nums[i] = num
+				i += 1
+		print nums
+		return i
 
 s = Solution()
-print s.removeDuplicates([1,1,1,1,2])
+print s.removeDuplicates3([1,1,1,1,2])

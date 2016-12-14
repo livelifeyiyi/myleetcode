@@ -4,8 +4,8 @@ def countcow():
 			print i
 
 #countcow()
-
-
+print 'There are %03d oranges in the basket' % 32
+print '1'*10 + '%d' %32
 class Solution(object):
 	def findPeakElement(self, nums):
 		"""

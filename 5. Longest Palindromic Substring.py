@@ -33,7 +33,7 @@ class Solution(object):
 	and that new maxPalindrome includes this new character.
 	Proof: if on adding 1 character, maxPalindromeLen increased by 3 or more, 
 	say the new maxPalindromeLen is Q, and the old maxPalindromeLen is P, and Q>=P+3. 
-	Then it would mean, even without this new character, there would be a palindromic substring ending in the last character, 
+	Then it would mean, even without this new checkaracter, there would be a palindromic substring ending in the last character, 
 	whose length is at least Q-2. Since Q-2 would be >P, this contradicts the condition that P is the maxPalindromeLen without the additional character.
 
 	So, it becomes simple, you only need to scan from beginning to the end, adding one character at a time, keeping track of maxPalindromeLen, and for each added character, you check if the substrings ending with this new character, with length P+1 or P+2, are palindromes, and update accordingly.

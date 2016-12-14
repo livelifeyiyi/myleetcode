@@ -19,6 +19,7 @@ class Solution(object):
 			for i in nums:
 				if i > mid and i <= high:
 					count += 1
+			#duplicate num between mid and high
 			if count > high - mid :
 				low = mid
 			else: high = mid
