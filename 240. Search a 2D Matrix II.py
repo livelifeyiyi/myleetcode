@@ -1,3 +1,4 @@
+#every row is sorted
 class Solution(object):
 	#200+ ms
 	def searchMatrix(self, matrix, target):
@@ -43,13 +44,33 @@ class Solution(object):
 			else:
 				r += 1
 		return False
-'''matrix = [
+#all matrix is sorted
+class Solution2(object):
+	def searchMatrix(self, matrix, target):
+		if not matrix: return False
+		rows = len(matrix)
+		colums = len(matrix[0])
+		r, c = 0, colums - 1
+		while 0 <= r < rows and 0 <= c < colums:
+			if matrix[r][c] == target:
+				return True
+			if matrix[r][c] < target:
+				r += 1
+			else: c -= 1
+		return False
+
+'''matrix1 = [
   [1,   4,  7, 11, 15],
   [2,   5,  8, 12, 19],
   [3,   6,  9, 16, 22],
   [10, 13, 14, 17, 24],
   [18, 21, 23, 26, 30]
 ]'''
-matrix = [[-5]]
-S = Solution()
-print S.searchMatrix1(matrix, -10)
+matrix2 = [
+  [1,   3,  5,  7],
+  [10, 11, 16, 20],
+  [23, 30, 34, 50]
+]
+#matrix = [[-5]]
+S = Solution2()
+print S.searchMatrix([], 10)
