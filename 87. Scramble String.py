@@ -5,7 +5,6 @@ class Solution(object):
 		:type s2: str
 		:rtype: bool
 		"""
-		
 		def getScramble(s1, s2, res):
 			if (s1,s2) in res.keys():
 				return res[(s1,s2)]
@@ -14,6 +13,7 @@ class Solution(object):
 			if len(s1) == 1:
 				return s1 == s2
 			for i in range(1, len(s1)):
+				#left part = right part and right = left or left = left and right = right
 				if getScramble(s1[:i], s2[-i:], res) and getScramble(s1[i:], s2[:-i], res) or getScramble(s1[:i], s2[:i], res) and getScramble(s1[i:], s2[i:], res):
 					res[(s1,s2)] = True
 					return True

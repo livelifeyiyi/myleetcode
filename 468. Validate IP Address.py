@@ -10,7 +10,8 @@ class Solution(object):
 			if len(ip) != 4: # or IP.count('.') != len(ip) - 1:
 				return "Neither"
 			for j in ip:
-				if j == '': return "Neither"
+				if j == '' or j[0] == '-': return "Neither"
+				#or use: j.isdigit()
 				try:
 					intj = int(j)
 				except ValueError:
