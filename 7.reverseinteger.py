@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 #######别人的代码：
 '''
 def reverse(x):
